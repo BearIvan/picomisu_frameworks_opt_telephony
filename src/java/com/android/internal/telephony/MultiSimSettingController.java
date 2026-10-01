@@ -308,6 +308,9 @@ public class MultiSimSettingController extends Handler {
         if (DBG) log("onAllSubscriptionsLoaded");
         mSubInfoInitialized = true;
         reEvaluateAll();
+        updateDefaults();
+        disableDataForNonDefaultNonOpportunisticSubscriptions();
+        deactivateGroupedOpportunisticSubscriptionIfNeeded();
     }
 
     /**
